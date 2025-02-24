@@ -1,0 +1,12 @@
+---
+title: "notebook list"
+sidebar: 
+  style: "docked"  # or "floating"
+  contents:
+    - text: smolagent_test
+      href: jupyter_notebooks/smolagent_test.ipynb
+    - text: excel_agent
+      href: jupyter_notebooks/excel_agent.ipynb
+---
+
+List of jupyter notebooks.

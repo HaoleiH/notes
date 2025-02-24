@@ -6,22 +6,21 @@ execute:
 
 website:
   title: "notes"
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - text: "notebooks"
-        menu: 
-          - text: smolagent_test
+  sidebar:
+    style: "docked"
+    collapse-level: 3
+    search: true
+    contents:
+      - text: "Introduction"
+        href: index.qmd
+      - section: "Notebooks"
+        href: jupyter_notebooks/list.qmd
+        contents:
+          - text: Smolagent_test
             href: jupyter_notebooks/smolagent_test.ipynb
-          - text: excel_agent
+          - text: Excel_agent
             href: jupyter_notebooks/excel_agent.ipynb
       - about.qmd
-    tools:
-          - icon: linkedin
-            href: https://www.linkedin.com/in/haolei-hui-30b0bb29b/
-          - icon: github
-            href: https://github.com/haoleih
 
 format:
   html:
@@ -32,4 +31,3 @@ format:
     toc: true
     #toc-location: left
     toc-title: Contents
-
