@@ -10,13 +10,22 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - href: jupyter_notebooks/
+        text: notebooks
       - about.qmd
+    tools:
+          - icon: linkedin
+            href: https://www.linkedin.com/in/haolei-hui-30b0bb29b/
+          - icon: github
+            href: https://github.com/haoleih
 
 format:
   html:
-    theme: cosmo
+    theme:
+      light: cosmo
+      dark: darkly
     css: styles.css
     toc: true
-
-
+    toc-location: left
+    toc-title: Contents
 
