@@ -13,8 +13,10 @@ website:
         text: Home
       - text: "notebooks"
         menu: 
-        - href: jupyter_notebooks/smolagent_test.ipynb
-          text: smolagent_test
+          - href: jupyter_notebooks/smolagent_test.ipynb
+            text: smolagent_test
+          - href: jupyter_notebooks/excel_agent.ipynb
+            text: excel_agent
       - about.qmd
     tools:
           - icon: linkedin
