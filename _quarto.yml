@@ -5,7 +5,7 @@ execute:
   freeze: auto
 
 website:
-  title: "notes"
+  title: "Notes"
   sidebar:
     style: "docked"
     collapse-level: 3
