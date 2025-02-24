@@ -8,15 +8,14 @@ website:
   title: "notes"
   navbar:
     left:
-      
       - href: index.qmd
         text: Home
       - text: "notebooks"
         menu: 
-          - href: jupyter_notebooks/smolagent_test.ipynb
-            text: smolagent_test
-          - href: jupyter_notebooks/excel_agent.ipynb
-            text: excel_agent
+          - text: smolagent_test
+            href: jupyter_notebooks/smolagent_test.ipynb
+          - text: excel_agent
+            href: jupyter_notebooks/excel_agent.ipynb
       - about.qmd
     tools:
           - icon: linkedin
