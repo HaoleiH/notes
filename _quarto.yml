@@ -8,10 +8,13 @@ website:
   title: "notes"
   navbar:
     left:
+      
       - href: index.qmd
         text: Home
-      - href: jupyter_notebooks/
-        text: notebooks
+      - text: "notebooks"
+        menu: 
+        - href: jupyter_notebooks/smolagent_test.ipynb
+          text: smolagent_test
       - about.qmd
     tools:
           - icon: linkedin
@@ -26,6 +29,6 @@ format:
       dark: darkly
     css: styles.css
     toc: true
-    toc-location: left
+    #toc-location: left
     toc-title: Contents
 
