@@ -20,6 +20,8 @@ website:
             href: jupyter_notebooks/smolagent_test.ipynb
           - text: Excel_agent
             href: jupyter_notebooks/excel_agent.ipynb
+          - text: Whisper automatic speech recognition
+            href: jupyter_notebooks/whisper_ASR.ipynb
       - about.qmd
 
 format:
