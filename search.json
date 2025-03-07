@@ -11,34 +11,13 @@
     ]
   },
   {
-    "objectID": "jupyter_notebooks/whisper_ASR.html",
-    "href": "jupyter_notebooks/whisper_ASR.html",
-    "title": "whisper base",
+    "objectID": "jupyter_notebooks/list.html",
+    "href": "jupyter_notebooks/list.html",
+    "title": "notebook list",
     "section": "",
-    "text": "https://huggingface.co/openai/whisper-base\n\nimport torch\nfrom transformers import pipeline\n#from datasets import load_dataset\n\ndevice = \"cuda:0\" if torch.cuda.is_available() else \"cpu\"\n\npipe = pipeline(\n  \"automatic-speech-recognition\",\n  model=\"openai/whisper-base\",\n  chunk_length_s=30,\n  device=device,\n)\n\n\n/usr/local/lib/python3.11/dist-packages/huggingface_hub/utils/_auth.py:94: UserWarning: \nThe secret `HF_TOKEN` does not exist in your Colab secrets.\nTo authenticate with the Hugging Face Hub, create a token in your settings tab (https://huggingface.co/settings/tokens), set it as secret in your Google Colab and restart your session.\nYou will be able to reuse this secret in all of your notebooks.\nPlease note that authentication is recommended but still optional to access public models or datasets.\n  warnings.warn(\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDevice set to use cuda:0\n\n\n\n\nimport warnings\nwarnings.filterwarnings(\"ignore\")\n# Assuming 'audio' is the loaded audio data and 'pipe' is the pre-initialized pipeline\n\nresult = pipe(\"https://maskgct.github.io/audios/icl_smaples/icl_40.wav\", batch_size=8,return_timestamps=True)\nresult\n\n{'text': \" A chance to leave him alone, but no. She just wanted to see him again. Anna, you don't know how it feels to lose a sister. Anna, I'm sorry, but your father asked me not to tell you anything.\",\n 'chunks': [{'timestamp': (0.0, 3.5),\n   'text': ' A chance to leave him alone, but no.'},\n  {'timestamp': (3.5, 6.0), 'text': ' She just wanted to see him again.'},\n  {'timestamp': (6.5, 10.5),\n   'text': \" Anna, you don't know how it feels to lose a sister.\"},\n  {'timestamp': (11.0, 15.5),\n   'text': \" Anna, I'm sorry, but your father asked me not to tell you anything.\"}]}\n\n\n\n# prompt: display audio /content/trump_0.wav\n\nimport IPython.display as ipd\nipd.Audio(url='https://maskgct.github.io/audios/icl_smaples/icl_40.wav')\n\n\n                \n                    \n                    Your browser does not support the audio element.\n                \n              \n\n\n\n\n#import librosa\n#audio, sr = librosa.load(\"/content/icl_10.wav\", sr=16000, )\n\n# Assuming 'audio' is the loaded audio data and 'pipe' is the pre-initialized pipeline\n\nresult = pipe(\"https://maskgct.github.io/audios/icl_smaples/icl_30.wav\", batch_size=8,return_timestamps=True)\nresult\n\n/usr/local/lib/python3.11/dist-packages/transformers/models/whisper/generation_whisper.py:573: FutureWarning: The input name `inputs` is deprecated. Please make sure to use `input_features` instead.\n  warnings.warn(\n\n\n{'text': '今天為大家帶來一部高分經典選一電影我給大家深度解說 進壁島1954年 在重重迷誤中 一搜杜倫環環史來胎的有些暈蠢他看到大量的水 它無法抑制的感到噁心',\n 'chunks': [{'timestamp': (0.0, 3.96), 'text': '今天為大家帶來一部高分經典選一電影'},\n  {'timestamp': (4.72, 8.24), 'text': '我給大家深度解說 進壁島'},\n  {'timestamp': (9.48, 15.44), 'text': '1954年 在重重迷誤中 一搜杜倫環環史來'},\n  {'timestamp': (16.76, 18.76), 'text': '胎的有些暈蠢'},\n  {'timestamp': (19.72, 23.72), 'text': '他看到大量的水 它無法抑制的感到噁心'}]}\n\n\n\nipd.Audio(url = 'https://maskgct.github.io/audios/icl_smaples/icl_30.wav')\n\n\n                \n                    \n                    Your browser does not support the audio element.\n                \n              \n\n\n\n!wget https://maskgct.github.io/audios/celeb_samples/trump_0.wav\nresult = pipe(\"/content/trump_0.wav\",return_timestamps=True)\nresult\n\n--2025-02-26 05:07:50--  https://maskgct.github.io/audios/celeb_samples/trump_0.wav\nResolving maskgct.github.io (maskgct.github.io)... 185.199.108.153, 185.199.109.153, 185.199.110.153, ...\nConnecting to maskgct.github.io (maskgct.github.io)|185.199.108.153|:443... connected.\nHTTP request sent, awaiting response... 200 OK\nLength: 1379484 (1.3M) [audio/wav]\nSaving to: ‘trump_0.wav’\n\ntrump_0.wav           0%[                    ]       0  --.-KB/s               trump_0.wav         100%[===================&gt;]   1.32M  --.-KB/s    in 0.04s   \n\n2025-02-26 05:07:50 (32.8 MB/s) - ‘trump_0.wav’ saved [1379484/1379484]\n\n\n\n{'text': ' In short, we embarked on a mission to make America great again for all Americans.',\n 'chunks': [{'timestamp': (0.0, 7.44),\n   'text': ' In short, we embarked on a mission to make America great again for all Americans.'}]}\n\n\n\nipd.Audio('/content/trump_0.wav')\n\n\n                \n                    \n                    Your browser does not support the audio element.\n                \n              \n\n\n\nwhisper larger\n\nimport torch\nfrom transformers import pipeline\n#from datasets import load_dataset\n\ndevice = \"cuda:0\" if torch.cuda.is_available() else \"cpu\"\n\npipe = pipeline(\n  \"automatic-speech-recognition\",\n  model=\"openai/whisper-medium\",\n  chunk_length_s=30,\n  device=device,\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDevice set to use cuda:0\n\n\n\nresult = pipe(\"https://maskgct.github.io/audios/icl_smaples/icl_30.wav\",return_timestamps=True)\nresult\n\n/usr/local/lib/python3.11/dist-packages/transformers/models/whisper/generation_whisper.py:573: FutureWarning: The input name `inputs` is deprecated. Please make sure to use `input_features` instead.\n  warnings.warn(\n\n\n{'text': '今天为大家带来一部高分经典悬疑电影,我给大家深度解说《禁闭岛》。1954年,在重重迷雾中,一艘渡轮缓缓驶来。胎的有些晕船。他看到大量的水,他无法抑制地感到恶心。',\n 'chunks': [{'timestamp': (0.0, 7.64),\n   'text': '今天为大家带来一部高分经典悬疑电影,我给大家深度解说《禁闭岛》。'},\n  {'timestamp': (9.64, 14.92), 'text': '1954年,在重重迷雾中,一艘渡轮缓缓驶来。'},\n  {'timestamp': (16.92, 18.2), 'text': '胎的有些晕船。'},\n  {'timestamp': (19.88, 23.32), 'text': '他看到大量的水,他无法抑制地感到恶心。'}]}\n\n\n\nresult = pipe(\"https://maskgct.github.io/audios/icl_smaples/icl_50.wav\", batch_size=8,return_timestamps=True)\nresult\n\n/usr/local/lib/python3.11/dist-packages/transformers/models/whisper/generation_whisper.py:573: FutureWarning: The input name `inputs` is deprecated. Please make sure to use `input_features` instead.\n  warnings.warn(\n\n\n{'text': '全民制作人們大家好我是練習時長兩年半的個人練習生蔡徐坤喜歡唱跳rap籃球music',\n 'chunks': [{'timestamp': (0.0, 1.6), 'text': '全民制作人們大家好'},\n  {'timestamp': (1.6, 4.6), 'text': '我是練習時長兩年半的個人練習生蔡徐坤'},\n  {'timestamp': (4.6, 8.0), 'text': '喜歡唱跳rap籃球music'}]}\n\n\n\nresult = pipe(\"https://maskgct.github.io/audios/icl_smaples/icl_80.wav\", batch_size=8,return_timestamps=True)\nresult\n\n/usr/local/lib/python3.11/dist-packages/transformers/models/whisper/generation_whisper.py:573: FutureWarning: The input name `inputs` is deprecated. Please make sure to use `input_features` instead.\n  warnings.warn(\n\n\n{'text': '以737為例氣流首先經過第一個著交換器從肌膚下方進氣門吸入了冷空氣會給熱管熱空氣進行初步的降溫降溫後氣流的溫度和壓力均有所下降',\n 'chunks': [{'timestamp': (0.0, 1.28), 'text': '以737為例'},\n  {'timestamp': (1.28, 3.84), 'text': '氣流首先經過第一個著交換器'},\n  {'timestamp': (3.84, 6.64), 'text': '從肌膚下方進氣門吸入了冷空氣'},\n  {'timestamp': (6.64, 9.04), 'text': '會給熱管熱空氣進行初步的降溫'},\n  {'timestamp': (9.04, 12.4), 'text': '降溫後氣流的溫度和壓力均有所下降'}]}\n\n\n\nresult = pipe(\"https://maskgct.github.io/audios/celeb_samples/jay_0.wav\", batch_size=8,return_timestamps=True)\nresult\n\n{'text': '對我來講是一種榮幸但是也是壓力蠻大的不過我覺得是一種很好的一個挑戰',\n 'chunks': [{'timestamp': (0.0, 2.0), 'text': '對我來講是一種榮幸'},\n  {'timestamp': (2.0, 4.0), 'text': '但是也是壓力蠻大的'},\n  {'timestamp': (4.0, 6.0), 'text': '不過我覺得是一種'},\n  {'timestamp': (6.0, 8.0), 'text': '很好的一個挑戰'}]}\n\n\n\nimport warnings\nwarnings.filterwarnings(\"ignore\")\nresult = pipe(\"/content/trump_0.wav\",return_timestamps=True)\nresult\n\n{'text': ' In short, we embarked on a mission to make America great again for all Americans.',\n 'chunks': [{'timestamp': (0.0, 7.44),\n   'text': ' In short, we embarked on a mission to make America great again for all Americans.'}]}",
+    "text": "List of jupyter notebooks.",
     "crumbs": [
-      "Notebooks",
-      "Whisper automatic speech recognition"
-    ]
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.",
-    "crumbs": [
-      "About"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "notes",
-    "section": "",
-    "text": "This is a Quarto website test.\nUpdating.",
-    "crumbs": [
-      "Introduction"
+      "Notebooks"
     ]
   },
   {
@@ -53,13 +32,55 @@
     ]
   },
   {
-    "objectID": "jupyter_notebooks/list.html",
-    "href": "jupyter_notebooks/list.html",
-    "title": "notebook list",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "notes",
     "section": "",
-    "text": "List of jupyter notebooks.",
+    "text": "This is a Quarto website test.\nUpdating.",
     "crumbs": [
-      "Notebooks"
+      "Introduction"
     ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "jupyter_notebooks/whisper_ASR.html",
+    "href": "jupyter_notebooks/whisper_ASR.html",
+    "title": "whisper base",
+    "section": "",
+    "text": "https://huggingface.co/openai/whisper-base\n\nimport torch\nfrom transformers import pipeline\n#from datasets import load_dataset\n\ndevice = \"cuda:0\" if torch.cuda.is_available() else \"cpu\"\n\npipe = pipeline(\n  \"automatic-speech-recognition\",\n  model=\"openai/whisper-base\",\n  chunk_length_s=30,\n  device=device,\n)\n\n\n/usr/local/lib/python3.11/dist-packages/huggingface_hub/utils/_auth.py:94: UserWarning: \nThe secret `HF_TOKEN` does not exist in your Colab secrets.\nTo authenticate with the Hugging Face Hub, create a token in your settings tab (https://huggingface.co/settings/tokens), set it as secret in your Google Colab and restart your session.\nYou will be able to reuse this secret in all of your notebooks.\nPlease note that authentication is recommended but still optional to access public models or datasets.\n  warnings.warn(\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDevice set to use cuda:0\n\n\n\n\nimport warnings\nwarnings.filterwarnings(\"ignore\")\n# Assuming 'audio' is the loaded audio data and 'pipe' is the pre-initialized pipeline\n\nresult = pipe(\"https://maskgct.github.io/audios/icl_smaples/icl_40.wav\", batch_size=8,return_timestamps=True)\nresult\n\n{'text': \" A chance to leave him alone, but no. She just wanted to see him again. Anna, you don't know how it feels to lose a sister. Anna, I'm sorry, but your father asked me not to tell you anything.\",\n 'chunks': [{'timestamp': (0.0, 3.5),\n   'text': ' A chance to leave him alone, but no.'},\n  {'timestamp': (3.5, 6.0), 'text': ' She just wanted to see him again.'},\n  {'timestamp': (6.5, 10.5),\n   'text': \" Anna, you don't know how it feels to lose a sister.\"},\n  {'timestamp': (11.0, 15.5),\n   'text': \" Anna, I'm sorry, but your father asked me not to tell you anything.\"}]}\n\n\n\n# prompt: display audio /content/trump_0.wav\n\nimport IPython.display as ipd\nipd.Audio(url='https://maskgct.github.io/audios/icl_smaples/icl_40.wav')\n\n\n                \n                    \n                    Your browser does not support the audio element.\n                \n              \n\n\n\n\n#import librosa\n#audio, sr = librosa.load(\"/content/icl_10.wav\", sr=16000, )\n\n# Assuming 'audio' is the loaded audio data and 'pipe' is the pre-initialized pipeline\n\nresult = pipe(\"https://maskgct.github.io/audios/icl_smaples/icl_30.wav\", batch_size=8,return_timestamps=True)\nresult\n\n/usr/local/lib/python3.11/dist-packages/transformers/models/whisper/generation_whisper.py:573: FutureWarning: The input name `inputs` is deprecated. Please make sure to use `input_features` instead.\n  warnings.warn(\n\n\n{'text': '今天為大家帶來一部高分經典選一電影我給大家深度解說 進壁島1954年 在重重迷誤中 一搜杜倫環環史來胎的有些暈蠢他看到大量的水 它無法抑制的感到噁心',\n 'chunks': [{'timestamp': (0.0, 3.96), 'text': '今天為大家帶來一部高分經典選一電影'},\n  {'timestamp': (4.72, 8.24), 'text': '我給大家深度解說 進壁島'},\n  {'timestamp': (9.48, 15.44), 'text': '1954年 在重重迷誤中 一搜杜倫環環史來'},\n  {'timestamp': (16.76, 18.76), 'text': '胎的有些暈蠢'},\n  {'timestamp': (19.72, 23.72), 'text': '他看到大量的水 它無法抑制的感到噁心'}]}\n\n\n\nipd.Audio(url = 'https://maskgct.github.io/audios/icl_smaples/icl_30.wav')\n\n\n                \n                    \n                    Your browser does not support the audio element.\n                \n              \n\n\n\n!wget https://maskgct.github.io/audios/celeb_samples/trump_0.wav\nresult = pipe(\"/content/trump_0.wav\",return_timestamps=True)\nresult\n\n--2025-02-26 05:07:50--  https://maskgct.github.io/audios/celeb_samples/trump_0.wav\nResolving maskgct.github.io (maskgct.github.io)... 185.199.108.153, 185.199.109.153, 185.199.110.153, ...\nConnecting to maskgct.github.io (maskgct.github.io)|185.199.108.153|:443... connected.\nHTTP request sent, awaiting response... 200 OK\nLength: 1379484 (1.3M) [audio/wav]\nSaving to: ‘trump_0.wav’\n\ntrump_0.wav           0%[                    ]       0  --.-KB/s               trump_0.wav         100%[===================&gt;]   1.32M  --.-KB/s    in 0.04s   \n\n2025-02-26 05:07:50 (32.8 MB/s) - ‘trump_0.wav’ saved [1379484/1379484]\n\n\n\n{'text': ' In short, we embarked on a mission to make America great again for all Americans.',\n 'chunks': [{'timestamp': (0.0, 7.44),\n   'text': ' In short, we embarked on a mission to make America great again for all Americans.'}]}\n\n\n\nipd.Audio('/content/trump_0.wav')\n\n\n                \n                    \n                    Your browser does not support the audio element.\n                \n              \n\n\n\nwhisper larger\n\nimport torch\nfrom transformers import pipeline\n#from datasets import load_dataset\n\ndevice = \"cuda:0\" if torch.cuda.is_available() else \"cpu\"\n\npipe = pipeline(\n  \"automatic-speech-recognition\",\n  model=\"openai/whisper-medium\",\n  chunk_length_s=30,\n  device=device,\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDevice set to use cuda:0\n\n\n\nresult = pipe(\"https://maskgct.github.io/audios/icl_smaples/icl_30.wav\",return_timestamps=True)\nresult\n\n/usr/local/lib/python3.11/dist-packages/transformers/models/whisper/generation_whisper.py:573: FutureWarning: The input name `inputs` is deprecated. Please make sure to use `input_features` instead.\n  warnings.warn(\n\n\n{'text': '今天为大家带来一部高分经典悬疑电影,我给大家深度解说《禁闭岛》。1954年,在重重迷雾中,一艘渡轮缓缓驶来。胎的有些晕船。他看到大量的水,他无法抑制地感到恶心。',\n 'chunks': [{'timestamp': (0.0, 7.64),\n   'text': '今天为大家带来一部高分经典悬疑电影,我给大家深度解说《禁闭岛》。'},\n  {'timestamp': (9.64, 14.92), 'text': '1954年,在重重迷雾中,一艘渡轮缓缓驶来。'},\n  {'timestamp': (16.92, 18.2), 'text': '胎的有些晕船。'},\n  {'timestamp': (19.88, 23.32), 'text': '他看到大量的水,他无法抑制地感到恶心。'}]}\n\n\n\nresult = pipe(\"https://maskgct.github.io/audios/icl_smaples/icl_50.wav\", batch_size=8,return_timestamps=True)\nresult\n\n/usr/local/lib/python3.11/dist-packages/transformers/models/whisper/generation_whisper.py:573: FutureWarning: The input name `inputs` is deprecated. Please make sure to use `input_features` instead.\n  warnings.warn(\n\n\n{'text': '全民制作人們大家好我是練習時長兩年半的個人練習生蔡徐坤喜歡唱跳rap籃球music',\n 'chunks': [{'timestamp': (0.0, 1.6), 'text': '全民制作人們大家好'},\n  {'timestamp': (1.6, 4.6), 'text': '我是練習時長兩年半的個人練習生蔡徐坤'},\n  {'timestamp': (4.6, 8.0), 'text': '喜歡唱跳rap籃球music'}]}\n\n\n\nresult = pipe(\"https://maskgct.github.io/audios/icl_smaples/icl_80.wav\", batch_size=8,return_timestamps=True)\nresult\n\n/usr/local/lib/python3.11/dist-packages/transformers/models/whisper/generation_whisper.py:573: FutureWarning: The input name `inputs` is deprecated. Please make sure to use `input_features` instead.\n  warnings.warn(\n\n\n{'text': '以737為例氣流首先經過第一個著交換器從肌膚下方進氣門吸入了冷空氣會給熱管熱空氣進行初步的降溫降溫後氣流的溫度和壓力均有所下降',\n 'chunks': [{'timestamp': (0.0, 1.28), 'text': '以737為例'},\n  {'timestamp': (1.28, 3.84), 'text': '氣流首先經過第一個著交換器'},\n  {'timestamp': (3.84, 6.64), 'text': '從肌膚下方進氣門吸入了冷空氣'},\n  {'timestamp': (6.64, 9.04), 'text': '會給熱管熱空氣進行初步的降溫'},\n  {'timestamp': (9.04, 12.4), 'text': '降溫後氣流的溫度和壓力均有所下降'}]}\n\n\n\nresult = pipe(\"https://maskgct.github.io/audios/celeb_samples/jay_0.wav\", batch_size=8,return_timestamps=True)\nresult\n\n{'text': '對我來講是一種榮幸但是也是壓力蠻大的不過我覺得是一種很好的一個挑戰',\n 'chunks': [{'timestamp': (0.0, 2.0), 'text': '對我來講是一種榮幸'},\n  {'timestamp': (2.0, 4.0), 'text': '但是也是壓力蠻大的'},\n  {'timestamp': (4.0, 6.0), 'text': '不過我覺得是一種'},\n  {'timestamp': (6.0, 8.0), 'text': '很好的一個挑戰'}]}\n\n\n\nimport warnings\nwarnings.filterwarnings(\"ignore\")\nresult = pipe(\"/content/trump_0.wav\",return_timestamps=True)\nresult\n\n{'text': ' In short, we embarked on a mission to make America great again for all Americans.',\n 'chunks': [{'timestamp': (0.0, 7.44),\n   'text': ' In short, we embarked on a mission to make America great again for all Americans.'}]}",
+    "crumbs": [
+      "Notebooks",
+      "Whisper automatic speech recognition"
+    ]
+  },
+  {
+    "objectID": "jupyter_notebooks/Phi_4_multimodal.html",
+    "href": "jupyter_notebooks/Phi_4_multimodal.html",
+    "title": "Phi-4 multimodal test",
+    "section": "",
+    "text": "Phi-4 multimodal is large language model developed by Microsoft. It is capable of accepting text, image and audio as input. Its audio recognition performance ranked No.1 in Open ASR leaderborad.\nThis notebook shows a demo of Phi-4 multimodal running on Colab free T4 GPU.\nCheck its huggingface releasing page."
+  },
+  {
+    "objectID": "jupyter_notebooks/Phi_4_multimodal.html#image-description",
+    "href": "jupyter_notebooks/Phi_4_multimodal.html#image-description",
+    "title": "Phi-4 multimodal test",
+    "section": "image description",
+    "text": "image description\n\n\n\nphi4-1.png"
+  },
+  {
+    "objectID": "jupyter_notebooks/Phi_4_multimodal.html#automatic-speech-recognition-asr",
+    "href": "jupyter_notebooks/Phi_4_multimodal.html#automatic-speech-recognition-asr",
+    "title": "Phi-4 multimodal test",
+    "section": "Automatic Speech Recognition (ASR)",
+    "text": "Automatic Speech Recognition (ASR)\n\n\n\nphi4-2.png"
   }
 ]
