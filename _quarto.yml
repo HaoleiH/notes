@@ -16,14 +16,15 @@ website:
       - section: "Notebooks"
         href: jupyter_notebooks/list.qmd
         contents:
-          - text: Smolagent_test
-            href: jupyter_notebooks/smolagent_test.ipynb
-          - text: Excel_agent
-            href: jupyter_notebooks/excel_agent.ipynb
-          - text: Whisper automatic speech recognition
-            href: jupyter_notebooks/whisper_ASR.ipynb
           - text: Phi-4 Multimodal Instruct Colab example
             href: jupyter_notebooks/Phi_4_multimodal.ipynb
+          - text: Smolagent test
+            href: jupyter_notebooks/smolagent_test.ipynb
+          - text: Excel agent
+            href: jupyter_notebooks/excel_agent.ipynb
+          - text: Whisper Automatic Speech Recognition
+            href: jupyter_notebooks/whisper_ASR.ipynb
+
       - about.qmd
 
 format:
