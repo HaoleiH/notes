@@ -22,6 +22,8 @@ website:
             href: jupyter_notebooks/excel_agent.ipynb
           - text: Whisper automatic speech recognition
             href: jupyter_notebooks/whisper_ASR.ipynb
+          - text: Phi-4 Multimodal Instruct Colab example
+            href: jupyter_notebooks/Phi-4-multimodal.ipynb
       - about.qmd
 
 format:
