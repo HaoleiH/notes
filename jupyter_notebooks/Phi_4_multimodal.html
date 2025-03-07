@@ -235,8 +235,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Phi-4 multimodal is large language model developed by Microsoft. It is capable of accepting text, image and audio as input. Its audio recognition performance ranked No.1 in <a href="https://huggingface.co/spaces/hf-audio/open_asr_leaderboard">Open ASR leaderborad</a>.</p>
-<p>This notebook shows a demo of Phi-4 multimodal running on Colab free T4 GPU.</p>
+<p>Phi-4 multimodal is large language model with 5.57B parameters developed by Microsoft. It is capable of accepting text, image and audio as input. Its audio recognition performance ranked No.1 in <a href="https://huggingface.co/spaces/hf-audio/open_asr_leaderboard">Open ASR leaderborad</a>.</p>
+<p>This notebook shows a <a href="https://colab.research.google.com/github/HaoleiH/notes/blob/main/jupyter_notebooks/Phi_4_multimodal.ipynb">demo</a> of Phi-4 multimodal running on Colab free T4 GPU.</p>
 <p>Check its <a href="https://huggingface.co/microsoft/Phi-4-multimodal-instruct">huggingface</a> releasing page.</p>
 <section id="examples" class="level1">
 <h1>Examples</h1>
@@ -288,7 +288,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    _attn_implementation<span class="op">=</span><span class="st">"eager"</span><span class="co">#'flash_attention_2',</span></span>
 <span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>).cuda()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-8" class="cell" data-outputid="e45d83ce-9530-4ac2-8ea0-301f28c28de4" data-execution_count="3">
+<div id="cell-8" class="cell" data-outputid="e45d83ce-9530-4ac2-8ea0-301f28c28de4">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>generation_config <span class="op">=</span> GenerationConfig.from_pretrained(model_path)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Define prompt structure</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>user_prompt <span class="op">=</span> <span class="st">'&lt;|user|&gt;'</span></span>

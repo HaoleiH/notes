@@ -67,7 +67,7 @@
     "href": "jupyter_notebooks/Phi_4_multimodal.html",
     "title": "Phi-4 multimodal test",
     "section": "",
-    "text": "Phi-4 multimodal is large language model developed by Microsoft. It is capable of accepting text, image and audio as input. Its audio recognition performance ranked No.1 in Open ASR leaderborad.\nThis notebook shows a demo of Phi-4 multimodal running on Colab free T4 GPU.\nCheck its huggingface releasing page.",
+    "text": "Phi-4 multimodal is large language model with 5.57B parameters developed by Microsoft. It is capable of accepting text, image and audio as input. Its audio recognition performance ranked No.1 in Open ASR leaderborad.\nThis notebook shows a demo of Phi-4 multimodal running on Colab free T4 GPU.\nCheck its huggingface releasing page.",
     "crumbs": [
       "Notebooks",
       "Phi-4 Multimodal Instruct Colab example"
