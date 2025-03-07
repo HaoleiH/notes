@@ -2,6 +2,5 @@
 title: "notes"
 ---
 
-This is a Quarto website test.
+This website hosts some of my learning notes and jupyter notebooks on AI and large language models.
 
-Updating.
