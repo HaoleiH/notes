@@ -67,20 +67,32 @@
     "href": "jupyter_notebooks/Phi_4_multimodal.html",
     "title": "Phi-4 multimodal test",
     "section": "",
-    "text": "Phi-4 multimodal is large language model developed by Microsoft. It is capable of accepting text, image and audio as input. Its audio recognition performance ranked No.1 in Open ASR leaderborad.\nThis notebook shows a demo of Phi-4 multimodal running on Colab free T4 GPU.\nCheck its huggingface releasing page."
+    "text": "Phi-4 multimodal is large language model developed by Microsoft. It is capable of accepting text, image and audio as input. Its audio recognition performance ranked No.1 in Open ASR leaderborad.\nThis notebook shows a demo of Phi-4 multimodal running on Colab free T4 GPU.\nCheck its huggingface releasing page.",
+    "crumbs": [
+      "Notebooks",
+      "Phi-4 Multimodal Instruct Colab example"
+    ]
   },
   {
     "objectID": "jupyter_notebooks/Phi_4_multimodal.html#image-description",
     "href": "jupyter_notebooks/Phi_4_multimodal.html#image-description",
     "title": "Phi-4 multimodal test",
     "section": "image description",
-    "text": "image description\n\n\n\nphi4-1.png"
+    "text": "image description\n\n\n\nphi4-1.png",
+    "crumbs": [
+      "Notebooks",
+      "Phi-4 Multimodal Instruct Colab example"
+    ]
   },
   {
     "objectID": "jupyter_notebooks/Phi_4_multimodal.html#automatic-speech-recognition-asr",
     "href": "jupyter_notebooks/Phi_4_multimodal.html#automatic-speech-recognition-asr",
     "title": "Phi-4 multimodal test",
     "section": "Automatic Speech Recognition (ASR)",
-    "text": "Automatic Speech Recognition (ASR)\n\n\n\nphi4-2.png"
+    "text": "Automatic Speech Recognition (ASR)\n\n\n\nphi4-2.png",
+    "crumbs": [
+      "Notebooks",
+      "Phi-4 Multimodal Instruct Colab example"
+    ]
   }
 ]
