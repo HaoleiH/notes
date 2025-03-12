@@ -25,21 +25,33 @@
     "href": "jupyter_notebooks/Gemma3_test.html",
     "title": "Gemma 3",
     "section": "",
-    "text": "Gemma 3 is released on 3/12/2025.\nI’ll test Gemma-3-4b-instruct in this notebook.\nhttps://huggingface.co/google/gemma-3-4b-it\n!pip install git+https://github.com/huggingface/transformers@v4.49.0-Gemma-3"
+    "text": "Gemma 3 is released on 3/12/2025.\nI’ll test Gemma-3-4b-instruct in this notebook.\nhttps://huggingface.co/google/gemma-3-4b-it\n!pip install git+https://github.com/huggingface/transformers@v4.49.0-Gemma-3",
+    "crumbs": [
+      "Notebooks",
+      "Gemma-3 test"
+    ]
   },
   {
     "objectID": "jupyter_notebooks/Gemma3_test.html#pipeline-api",
     "href": "jupyter_notebooks/Gemma3_test.html#pipeline-api",
     "title": "Gemma 3",
     "section": "pipeline api",
-    "text": "pipeline api\n\nimport os\nfrom google.colab import userdata\n\nos.environ[\"HF_TOKEN\"] = userdata.get('HF_API_KEY') # replace with your own huggingface token\n\n\nfrom transformers import pipeline\nimport torch\n\npipe = pipeline(\n    \"image-text-to-text\",\n    model=\"google/gemma-3-4b-it\",\n    device=\"cuda\",\n    torch_dtype=torch.bfloat16\n)\n\n\nmessages = [\n    {\n        \"role\": \"system\",\n        \"content\": [{\"type\": \"text\", \"text\": \"You are a helpful assistant.\"}]\n    },\n    {\n        \"role\": \"user\",\n        \"content\": [\n            {\"type\": \"image\", \"url\": \"https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/p-blog/candy.JPG\"},\n            {\"type\": \"text\", \"text\": \"What animal is on the candy?\"}\n        ]\n    }\n]\n\noutput = pipe(text=messages, max_new_tokens=200)\nprint(output[0][\"generated_text\"][-1][\"content\"])\n# Okay, let's take a look!\n# Based on the image, the animal on the candy is a **turtle**.\n# You can see the shell shape and the head and legs.\n\nOkay, let's take a look at the candy!\n\nBased on the image, the animal on the candy is a **turtle**. You can see the shell shape and the head and legs. \n\nDo you want to know anything more about these candies?"
+    "text": "pipeline api\n\nimport os\nfrom google.colab import userdata\n\nos.environ[\"HF_TOKEN\"] = userdata.get('HF_API_KEY') # replace with your own huggingface token\n\n\nfrom transformers import pipeline\nimport torch\n\npipe = pipeline(\n    \"image-text-to-text\",\n    model=\"google/gemma-3-4b-it\",\n    device=\"cuda\",\n    torch_dtype=torch.bfloat16\n)\n\n\nmessages = [\n    {\n        \"role\": \"system\",\n        \"content\": [{\"type\": \"text\", \"text\": \"You are a helpful assistant.\"}]\n    },\n    {\n        \"role\": \"user\",\n        \"content\": [\n            {\"type\": \"image\", \"url\": \"https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/p-blog/candy.JPG\"},\n            {\"type\": \"text\", \"text\": \"What animal is on the candy?\"}\n        ]\n    }\n]\n\noutput = pipe(text=messages, max_new_tokens=200)\nprint(output[0][\"generated_text\"][-1][\"content\"])\n# Okay, let's take a look!\n# Based on the image, the animal on the candy is a **turtle**.\n# You can see the shell shape and the head and legs.\n\nOkay, let's take a look at the candy!\n\nBased on the image, the animal on the candy is a **turtle**. You can see the shell shape and the head and legs. \n\nDo you want to know anything more about these candies?",
+    "crumbs": [
+      "Notebooks",
+      "Gemma-3 test"
+    ]
   },
   {
     "objectID": "jupyter_notebooks/Gemma3_test.html#gradio-interface",
     "href": "jupyter_notebooks/Gemma3_test.html#gradio-interface",
     "title": "Gemma 3",
     "section": "gradio interface|",
-    "text": "gradio interface|\n\n!pip install gradio\n\n\nfrom transformers.image_utils import load_image\nimport gradio as gr\ndef process_image_and_generate(user_message, image):\n\n    messages = [\n        {\n            \"role\": \"system\",\n            \"content\": [{\"type\": \"text\", \"text\": \"You are a helpful assistant.\"}]\n        },\n        {\n            \"role\": \"user\",\n            \"content\": [\n                {\"type\": \"image\", \"image\": load_image(image)},\n                {\"type\": \"text\", \"text\": user_message}\n            ]\n        }\n    ]\n\n    output = pipe(text=messages, max_new_tokens=1000)\n    response = output[0][\"generated_text\"][-1][\"content\"]\n    return response\n\n\nwith gr.Blocks() as demo:\n    gr.Markdown(\"# Gemma-3-4b-it chat\")\n    image_input = gr.Image(type=\"pil\", label=\"Upload an image\")\n    user_message = gr.Textbox(label=\"User Prompt\")\n    with gr.Accordion('Answer:', open=True):\n        image_output = gr.Markdown(label=\"Output\",)\n    image_button = gr.Button(\"Process Image\")\n\n    image_button.click(\n        fn=process_image_and_generate,\n        inputs=[user_message, image_input],\n        outputs=image_output,\n    )\n\ndemo.launch()\n\nRunning Gradio in a Colab notebook requires sharing enabled. Automatically setting `share=True` (you can turn this off by setting `share=False` in `launch()` explicitly).\n\nColab notebook detected. To show errors in colab notebook, set debug=True in launch()\n* Running on public URL: https://971706fbd0f4b36c2d.gradio.live\n\nThis share link expires in 72 hours. For free permanent hosting and GPU upgrades, run `gradio deploy` from the terminal in the working directory to deploy to Hugging Face Spaces (https://huggingface.co/spaces)"
+    "text": "gradio interface|\n\n!pip install gradio\n\n\nfrom transformers.image_utils import load_image\nimport gradio as gr\ndef process_image_and_generate(user_message, image):\n\n    messages = [\n        {\n            \"role\": \"system\",\n            \"content\": [{\"type\": \"text\", \"text\": \"You are a helpful assistant.\"}]\n        },\n        {\n            \"role\": \"user\",\n            \"content\": [\n                {\"type\": \"image\", \"image\": load_image(image)},\n                {\"type\": \"text\", \"text\": user_message}\n            ]\n        }\n    ]\n\n    output = pipe(text=messages, max_new_tokens=1000)\n    response = output[0][\"generated_text\"][-1][\"content\"]\n    return response\n\n\nwith gr.Blocks() as demo:\n    gr.Markdown(\"# Gemma-3-4b-it chat\")\n    image_input = gr.Image(type=\"pil\", label=\"Upload an image\")\n    user_message = gr.Textbox(label=\"User Prompt\")\n    with gr.Accordion('Answer:', open=True):\n        image_output = gr.Markdown(label=\"Output\",)\n    image_button = gr.Button(\"Process Image\")\n\n    image_button.click(\n        fn=process_image_and_generate,\n        inputs=[user_message, image_input],\n        outputs=image_output,\n    )\n\ndemo.launch()\n\nRunning Gradio in a Colab notebook requires sharing enabled. Automatically setting `share=True` (you can turn this off by setting `share=False` in `launch()` explicitly).\n\nColab notebook detected. To show errors in colab notebook, set debug=True in launch()\n* Running on public URL: https://971706fbd0f4b36c2d.gradio.live\n\nThis share link expires in 72 hours. For free permanent hosting and GPU upgrades, run `gradio deploy` from the terminal in the working directory to deploy to Hugging Face Spaces (https://huggingface.co/spaces)",
+    "crumbs": [
+      "Notebooks",
+      "Gemma-3 test"
+    ]
   },
   {
     "objectID": "about.html",
