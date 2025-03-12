@@ -18,6 +18,8 @@ website:
         contents:
           - text: Phi-4 Multimodal Instruct Colab example
             href: jupyter_notebooks/Phi_4_multimodal.ipynb
+          - text: Gemma-3 test
+            href: jupyter_notebooks/Gemma3_test.ipynb
           - text: Smolagent test
             href: jupyter_notebooks/smolagent_test.ipynb
           - text: Excel agent
