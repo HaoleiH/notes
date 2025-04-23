@@ -16,6 +16,8 @@ website:
       - section: "Notebooks"
         href: jupyter_notebooks/list.qmd
         contents:
+          - text: Singing Voice Conversion
+            href: jupyter_notebooks/SVC_seed_VC.ipynb
           - text: Phi-4 Multimodal Instruct Colab example
             href: jupyter_notebooks/Phi_4_multimodal.ipynb
           - text: Gemma-3 test
