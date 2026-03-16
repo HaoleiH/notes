@@ -1,39 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://HaoleiH.github.io/notes/index.html</loc>
-    <lastmod>2025-04-23T14:58:16.206Z</lastmod>
-  </url>
-  <url>
-    <loc>https://HaoleiH.github.io/notes/jupyter_notebooks/smolagent_test.html</loc>
-    <lastmod>2025-04-23T14:58:16.327Z</lastmod>
-  </url>
-  <url>
-    <loc>https://HaoleiH.github.io/notes/jupyter_notebooks/excel_agent.html</loc>
-    <lastmod>2025-04-23T14:58:16.318Z</lastmod>
+    <loc>https://HaoleiH.github.io/notes/about.html</loc>
+    <lastmod>2026-03-16T21:26:42.429Z</lastmod>
   </url>
   <url>
     <loc>https://HaoleiH.github.io/notes/jupyter_notebooks/whisper_ASR.html</loc>
-    <lastmod>2025-04-23T14:58:16.339Z</lastmod>
+    <lastmod>2026-03-16T21:26:42.586Z</lastmod>
   </url>
   <url>
     <loc>https://HaoleiH.github.io/notes/jupyter_notebooks/Gemma3_test.html</loc>
-    <lastmod>2025-04-23T14:58:16.206Z</lastmod>
+    <lastmod>2026-03-16T21:26:42.454Z</lastmod>
   </url>
   <url>
-    <loc>https://HaoleiH.github.io/notes/jupyter_notebooks/Phi_4_multimodal.html</loc>
-    <lastmod>2025-04-23T14:58:16.207Z</lastmod>
+    <loc>https://HaoleiH.github.io/notes/jupyter_notebooks/E_field.html</loc>
+    <lastmod>2026-03-16T21:26:42.454Z</lastmod>
   </url>
   <url>
     <loc>https://HaoleiH.github.io/notes/jupyter_notebooks/SVC_seed_VC.html</loc>
-    <lastmod>2025-04-23T14:58:16.317Z</lastmod>
+    <lastmod>2026-03-16T21:26:42.565Z</lastmod>
+  </url>
+  <url>
+    <loc>https://HaoleiH.github.io/notes/index.html</loc>
+    <lastmod>2026-03-16T21:26:42.429Z</lastmod>
+  </url>
+  <url>
+    <loc>https://HaoleiH.github.io/notes/jupyter_notebooks/smolagent_test.html</loc>
+    <lastmod>2026-03-16T21:26:42.575Z</lastmod>
+  </url>
+  <url>
+    <loc>https://HaoleiH.github.io/notes/jupyter_notebooks/excel_agent.html</loc>
+    <lastmod>2026-03-16T21:26:42.566Z</lastmod>
+  </url>
+  <url>
+    <loc>https://HaoleiH.github.io/notes/jupyter_notebooks/Phi_4_multimodal.html</loc>
+    <lastmod>2026-03-16T21:26:42.455Z</lastmod>
   </url>
   <url>
     <loc>https://HaoleiH.github.io/notes/jupyter_notebooks/list.html</loc>
-    <lastmod>2025-04-23T14:58:16.318Z</lastmod>
-  </url>
-  <url>
-    <loc>https://HaoleiH.github.io/notes/about.html</loc>
-    <lastmod>2025-04-23T14:58:16.206Z</lastmod>
+    <lastmod>2026-03-16T21:26:42.566Z</lastmod>
   </url>
 </urlset>
