@@ -16,6 +16,8 @@ website:
       - section: "Notebooks"
         href: jupyter_notebooks/list.qmd
         contents:
+          - text: Electric field
+            href: jupyter_notebooks/E_field.ipynb
           - text: Singing Voice Conversion
             href: jupyter_notebooks/SVC_seed_VC.ipynb
           - text: Phi-4 Multimodal Instruct Colab example
